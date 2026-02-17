@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import Ripple from './Ripple';
 
 type Props = {
+  clickCntRef: React.RefObject<number>,
   setClickCnt: React.Dispatch<React.SetStateAction<number>>,
   startClickingTest: () => void,
 }
@@ -12,9 +13,7 @@ type RippleType = {
   y: number,
 }
 
-const ClickingArea = ({setClickCnt, startClickingTest}: Props) => {
-
-  const clickCntRef = useRef(0);
+const ClickingArea = ({clickCntRef, setClickCnt, startClickingTest}: Props) => {
 
   const [ripples, setRipples] = useState<RippleType[]>([]);
 
@@ -32,7 +31,6 @@ const ClickingArea = ({setClickCnt, startClickingTest}: Props) => {
     }
     
     setClickCnt(clickCntRef.current);
-    console.log(clickCntRef.current);
 
     setRipples(prev => {
       const maxRipples = 5;
