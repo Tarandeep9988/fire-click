@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Capsules from './Capsules'
 import ClickingArea from './ClickingArea'
 
@@ -9,16 +9,22 @@ type Props = {
 }
 
 const CpsTester = ({time = 5}: Props) => {
+  const [clickCnt, setClickCnt] = useState(0);
+  const startClickingTest = () => {
+    
+  }
+
+
   return (
     <div className='bg-blue-50 h-100 w-150 p-4 flex flex-col'>
       <div className='flex justify-between w-full pb-5'>
         <Capsules value={0} unit='Timer' />
         <Capsules value={0} unit='Click/s' />
-        <Capsules value={0} unit='Score' />
+        <Capsules value={clickCnt} unit='Score' />
       </div>
 
       <div className='grow'>
-        <ClickingArea />
+        <ClickingArea setClickCnt={setClickCnt} startClickingTest={startClickingTest} />
       </div>
     </div>
   )
