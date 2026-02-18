@@ -41,7 +41,7 @@ const ClickingArea = ({clickCntRef, setClickCnt, startClickingTest}: Props) => {
   }
 
   return (
-    <div className='relative flex justify-center items-center bg-black rounded-2xl h-full cursor-pointer overflow-hidden'
+    <div className='relative flex justify-center items-center bg-gray-800 border-2 border-purple-500/30 hover:border-purple-500/50 transition-colors rounded-2xl h-full cursor-pointer overflow-hidden text-gray-300'
       onClick={handleClick}
       >
       {ripples.map((ripple) => (
@@ -51,7 +51,7 @@ const ClickingArea = ({clickCntRef, setClickCnt, startClickingTest}: Props) => {
           y={ripple.y}
         />
       ))}
-      ClickingArea
+      Click
     </div>
   )
 }

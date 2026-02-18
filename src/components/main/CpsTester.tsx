@@ -71,11 +71,12 @@ const CpsTester = ({time = 5}: Props) => {
 
 
   return (
-    <div className='bg-blue-50 h-100 w-150 p-4 flex flex-col'>
+    <div className='bg-gray-900 h-100 w-150 p-4 flex flex-col rounded-2xl'>
       {toggleResultWindow && <ResultWindow cps={cps} 
         handleClose={
           () => {
             setToggleResultWindow(false);
+            resetTest();
           }
         }
         handleRetake={
